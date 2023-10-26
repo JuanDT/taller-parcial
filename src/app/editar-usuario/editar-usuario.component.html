@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col" style="padding: 50px;">
+            <h2>Editar Usuario</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Nombre y Apellidos:</label>
+            <input id="name" [(ngModel)]="user.name" name="name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input id="email" [(ngModel)]="user.email" name="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="userType">Tipo de Usuario:</label>
+            <select id="userType" [(ngModel)]="user.userType" name="userType" class="form-control" required>
+              <option value="Admin">Admin</option>
+              <option value="Vendedor">Vendedor</option>
+              <option value="Cliente">Cliente</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="observations">Observaciones:</label>
+            <textarea id="observations" [(ngModel)]="user.observations" name="observations" class="form-control" required></textarea>
+          </div>
+          <div *ngIf="validation === true" style="color: red;"><p>Valide formulario</p></div>
+          <br>
+          <div class="row">
+               <div class="col-3">
+                <button  class="btn btn-primary" (click)="saveChanges()">Guardar Cambios</button>
+               </div>
+               <div class="col">
+                <button  class="btn btn-secondary" routerLink=''  (click)="cancelEdit()">Cancelar</button>
+               </div>
+          </div>
+        </form>
+        </div>
+        
+    </div>
+    
+  </div>
+  
